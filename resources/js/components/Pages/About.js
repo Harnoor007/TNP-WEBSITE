@@ -630,6 +630,9 @@ paper: {
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
   },
+  customText: {
+    fontSize: '20px', // Set font size to 20px
+  },
 num: {
     fontSize: "28px",
     fontWeight: "500",
@@ -802,7 +805,7 @@ export default function Home() {
             <Typography variant="h6" component="h1">
             Database Formation
             </Typography>
-            <Typography>Collects the record of students of particular year and forms database that MNCs demand as a record from the institution.</Typography>
+            <Typography className={classes.customText}>Collects the record of students of particular year and forms database that MNCs demand as a record from the institution.</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -823,7 +826,7 @@ export default function Home() {
             <Typography variant="h6" component="h1">
             Finding Contacts
             </Typography>
-            <Typography>Fetches contacts of Human Resource Managers of different Companies to get information regarding job offering for students by their organisations.</Typography>
+            <Typography className={classes.customText}>Fetches contacts of Human Resource Managers of different Companies to get information regarding job offering for students by their organisations.</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -839,7 +842,7 @@ export default function Home() {
             <Typography variant="h6" component="h1">
             Getting Confirmations
             </Typography>
-            <Typography>Training and Placement cell gets confirmation from HRs for conducting placement drive on particular dates as per directed and arranging hospitality services and venue.</Typography>
+            <Typography className={classes.customText}>Training and Placement cell gets confirmation from HRs for conducting placement drive on particular dates as per directed and arranging hospitality services and venue.</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -854,7 +857,7 @@ export default function Home() {
             <Typography variant="h6" component="h1">
               Placement Drives
             </Typography>
-            <Typography>Smoothly conducts placement drive for the students by different MNCs.</Typography>
+            <Typography className={classes.customText}>Smoothly conducts placement drive for the students by different MNCs.</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
