@@ -18,6 +18,40 @@ import image2 from "../../../images/image2.jpg";
 import image3 from "../../../images/image3.jpg";
 import office from "../../../images/office1.jpg";
 import Navbar from "../HomeComponent/SideComponents/Navbar";
+import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
+import StorageIcon from '@material-ui/icons/Storage';
+import ContactsIcon from '@material-ui/icons/Contacts';
+import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
+import WorkIcon from '@material-ui/icons/Work';
+import Paper from '@material-ui/core/Paper';
+
+const InputNode = ({ data }) => {
+  return (
+    <div
+      style={{
+        background: '#F6F7F8',
+        border: '1px solid #D1D3E0',
+        borderRadius: 5,
+        color: '#1A1A2E',
+        cursor: 'pointer',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: 10,
+        width: 150,
+        height: 50,
+      }}
+    >
+      {data.label}
+    </div>
+  );
+};
 
 const useStyles = makeStyles((theme) => ({
   body: {
@@ -589,6 +623,13 @@ box31: {
         marginLeft: "auto",
     }
 },
+paper: {
+    padding: '6px 16px',
+    backgroundColor: '#e8f3fc',
+  },
+  secondaryTail: {
+    backgroundColor: theme.palette.secondary.main,
+  },
 num: {
     fontSize: "28px",
     fontWeight: "500",
@@ -625,7 +666,6 @@ export default function Home() {
             <img src={mobileComponent}></img>
         </div>
     </div>
-    
     <div className={classes.secondbox}>
         <div className={classes.innerBox}>
             <Typography className={classes.aboutTnP}>About T&P</Typography>
@@ -739,52 +779,89 @@ export default function Home() {
                     <Typography className={classes.tpo}>Training & Placement Officer</Typography>
                 </div>
             </div>
-    
             <Grid container md={16} className={classes.section3_0}>
-                <div className={classes.subheader}>
-                <Typography variant="h5" component="h2" className={classes.coreDetails}>
-                    How T&P Cell Works?
-                </Typography>
-                </div>
-                <div className={classes.section3_1}>
-                <div className={classes.box31}>
-                    <Typography className={classes.num}>01</Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading4}>
-                            Database Formation
-                        </Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading5}>
-                            Collects the record of students of particular year and forms database that MNCs demand as a record from the institution.
-                        </Typography>
-                    </div>
-                    <div className={classes.box31}>
-                    <Typography className={classes.num}>02</Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading4}>
-                            Finding Contacts
-                        </Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading5}>
-                            Fetches contacts of Human Resource Managers of different Companies to get information regarding job offering for students by their organisations.
-                        </Typography>
-                    </div>
-                    <div className={classes.box31}>
-                    <Typography className={classes.num}>03</Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading4}>
-                            Getting Confirmations
-                        </Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading5}>
-                            Training and Placement cell gets confirmation from HRs for conducting placement drive on particular dates as per directed and arranging hospitality services and venue.
-                        </Typography>
-                    </div>
-                    <div className={classes.box31}>
-                    <Typography className={classes.num}>04</Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading4}>
-                            Placement Drives
-                        </Typography>
-                        <Typography variant="h5" component="h2" className={classes.subheading5}>
-                            Smoothly conducts placement drive for the students by different MNCs.
-                        </Typography>
-                    </div>
-                </div>
-            </Grid>
+  <div className={classes.subheader}>
+    <Typography variant="h5" component="h2" className={classes.coreDetails}>
+      How T&P Cell Works?
+    </Typography>
+  </div>
+  <Timeline align="alternate">
+      <TimelineItem>
+        <TimelineOppositeContent>
+          <Typography variant="body2" color="textSecondary">
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot color="primary">
+            <StorageIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3} className={classes.paper}>
+            <Typography variant="h6" component="h1">
+            Database Formation
+            </Typography>
+            <Typography>Collects the record of students of particular year and forms database that MNCs demand as a record from the institution.</Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineOppositeContent>
+          <Typography variant="body2" color="textSecondary">
+            
+          </Typography>
+        </TimelineOppositeContent>
+        <TimelineSeparator>
+          <TimelineDot color="primary">
+            <ContactsIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3} className={classes.paper}>
+            <Typography variant="h6" component="h1">
+            Finding Contacts
+            </Typography>
+            <Typography>Fetches contacts of Human Resource Managers of different Companies to get information regarding job offering for students by their organisations.</Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot color="primary">
+            <ThumbUpAltIcon />
+          </TimelineDot>
+          <TimelineConnector />
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3} className={classes.paper} >
+            <Typography variant="h6" component="h1">
+            Getting Confirmations
+            </Typography>
+            <Typography>Training and Placement cell gets confirmation from HRs for conducting placement drive on particular dates as per directed and arranging hospitality services and venue.</Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+      <TimelineItem>
+        <TimelineSeparator>
+          <TimelineDot  color="primary">
+            <WorkIcon />
+          </TimelineDot>
+        </TimelineSeparator>
+        <TimelineContent>
+          <Paper elevation={3} className={classes.paper}>
+            <Typography variant="h6" component="h1">
+              Placement Drives
+            </Typography>
+            <Typography>Smoothly conducts placement drive for the students by different MNCs.</Typography>
+          </Paper>
+        </TimelineContent>
+      </TimelineItem>
+    </Timeline>
+</Grid>
+    
+            
             <div className={classes.footer}>
             <p> Developed with ❤️ by <a className={classes.tag} href="https://tnpgndec.com/genconians">Genconians </a> | ©️ {year} <a className={classes.tag} href="https://gndec.ac.in/"> GNDEC,ldh</a></p>
             </div>
